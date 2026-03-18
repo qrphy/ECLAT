@@ -35,13 +35,5 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
     color: "#b91c1c",
   },
-  {
-    id: 5,
-    name: "Forest Wash",
-    price: 329,
-    description: "Acid wash tekniğiyle işlenmiş, vintage görünümlü kumaş.",
-    image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&q=80",
-    color: "#166534",
-    badge: "Sınırlı",
-  },
+  
 ];
