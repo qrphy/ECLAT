@@ -120,8 +120,44 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* RIGHT — cart */}
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        {/* RIGHT — account + cart */}
+        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.75rem" }}>
+
+          {/* Hesap butonu */}
+          <Link
+            href="/account"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              background: "transparent",
+              color: "var(--text-muted)",
+              padding: "0.5rem 1rem",
+              borderRadius: "2px",
+              fontSize: "0.8rem",
+              letterSpacing: "0.08em",
+              fontWeight: 500,
+              border: "1px solid var(--border)",
+              transition: "all 0.2s ease",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+              (e.currentTarget as HTMLElement).style.color = "var(--accent)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+              (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+            }}
+          >
+            <UserIcon />
+            <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.2, gap: "1px" }}>
+              <span style={{ fontSize: "0.6rem", opacity: 0.6, letterSpacing: "0.12em" }}>GİRİŞ YAP</span>
+              <span style={{ fontSize: "0.65rem", letterSpacing: "0.08em" }}>HESAP OLUŞTUR</span>
+            </span>
+          </Link>
+
+          {/* Sepet butonu */}
           <Link
             href="/cart"
             style={{
@@ -325,6 +361,15 @@ export default function Header() {
         </div>
       </div>
     </>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+    </svg>
   );
 }
 
